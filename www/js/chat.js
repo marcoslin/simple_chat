@@ -96,13 +96,16 @@ function ChatRoom() {
     };
 }
 
+var chatserver, chatroom = new ChatRoom();
+
 function ChatServer(in_username) {
     'use strict';
 
-    var socket, chatroom, MAX_RECONNECT_RETRY = 6;
+    var socket, MAX_RECONNECT_RETRY = 6;
 
     // Initialization code
     chatroom.username = in_username;
+
     socket = io.connect(document.location, {'max reconnection attempts': MAX_RECONNECT_RETRY, 'connect timeout': 2000 });
 
     // Exposed methods
@@ -200,7 +203,7 @@ REF:
 
 }
 
-var chatserver, chatroom = new ChatRoom();
+
 
 // Action to perform when use click on a button
 function run_action() {
