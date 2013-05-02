@@ -1,0 +1,70 @@
+#chat_window_handle {
+	border: 1px solid black;
+	height: 410px;
+	width: 420px;
+}
+
+#chat_window_title_handle {
+	height: 25px;
+	width: 420px;
+	background-color: #b0c4de;
+}
+
+.chat_title {
+	position: inline-block;
+	float: left;
+	margin: 4px;
+	width: 345;
+	color: blue;
+}
+
+.chat_status {
+	position: inline-block;
+	float: right;
+	margin: 4px;
+	height: 18px;
+	width: 18px;
+}
+
+.status_disconnected {
+	background-color: red;
+}
+
+.status_connected {
+	background-color: green;
+}
+
+.chat_log {
+	height: 340px;
+	width: 300px;
+	margin: 3px 1px 2px 3px;
+	border: 1px solid grey;
+	overflow-y: scroll;
+}
+
+.chat_online_users {
+	height: 340px;
+	width: 99px;
+	margin: 3px 3px 2px 1px;
+	border: 1px solid grey;
+}
+
+.chat_message_input {
+	width: 296px;
+	margin: 0px 1px 2px 3px;
+	height: 20px;
+}
+
+.message_system {
+	color: grey;
+}
+
+.message_self {
+	color: black;
+}
+
+.message_other {
+	color: green;
+	font-style: italic;
+	
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Sample Chat Room</title>
+		<link href="css/style.css" rel="stylesheet"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="js/chat.js"></script>
+	</head>
+<body>
+	
+	<div id="chat_window_handle">
+	
+	<div id="chat_window_title_handle">
+		<div id="chat_title" class="chat_title">Login:</div>
+		<div id="chat_status" class="chat_status">&nbsp;</div>
+	</div>
+	
+	<table>
+		<tr>
+			<td>
+				<div id="chat_log" class="chat_log">
+					<div>Please enter a user name and hit login.</div>
+				</div>
+			</td>
+			<td>
+				<div id="chat_online_users" class="chat_online_users"></div>
+			</td>
+		</tr><tr>
+			<td><input type="text" id="chat_message_input" class="chat_message_input"></td>
+			<td align="center"><input type="submit" id="btn_action" value="Login" onClick="run_action();"></td>
+		</tr>
+	</table>
+
+	</div>
+	
+</body>
+</html> 
