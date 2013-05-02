@@ -6,9 +6,12 @@
  * The sequence of instantiation is critical for socket.io
  * to correctly work with express.
 */
+var fs = require("fs");
 var express = require("express");
 var socket_io = require("socket.io");
 var chat_clients = require("chat_clients");
+var repl = require("repl");
+var net = require('net');
 
 var http_port = 8082;
 var app = express();
@@ -19,6 +22,7 @@ var server = app.listen(http_port);
 var io = socket_io.listen(server);
 io.set("log level", 2);
 console.log("Web server running at port " + http_port);
+
 
 /*
 Capture event from socket
@@ -61,6 +65,27 @@ io.on('connection', function (socket){
     });
 });
 
+
+/**
+ * Create a REPL exposing app and clients.  Connect to this socket using:
+ *     socat - GOPEN:<<socket_file>>
+ */
+var socket_file = "/var/tmp/simple_chat_repl_socket";
+if ( fs.existsSync(socket_file) ) {
+    fs.unlinkSync(socket_file);
+}
+net.createServer(function (socket) {
+    var r =repl.start({
+        prompt: "simple_chat" + "> ",
+        input: socket,
+        output: socket
+    });
+    r.context.app = app;
+    r.context.clients = clients;
+    r.on('exit', function () {
+        socket.end();
+    });
+}).listen(socket_file);
 
 
 
