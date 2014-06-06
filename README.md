@@ -2,13 +2,35 @@
 
 Sample code for node.js demonstration how to create a real-time chat over web.
 
-# Requirements:
+## Prerequisites
 
-## Node.js
-You must install `node`, and then using the included `npm` command to install
-required packages.
+* node.js
+* socat unix command line tool
 
-1. [node.js](http://nodejs.org/) >= 0.10.4
-1. [socket.io]() >= 0.9.14
+## Setup
+After cloning this project from github, do:
 
+```
+cd simple_chat
+npm install
+```
 
+## Running server
+
+```
+node server.js
+```
+
+## Connecting to server console
+To connect to the server console, do:
+
+```
+socat - GOPEN:/var/tmp/simple_chat_repl_socket
+```
+
+Make sure you have client connected and do the following in the
+console to see all connected clients.
+
+```
+clients.all
+```
