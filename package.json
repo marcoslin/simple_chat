@@ -1,0 +1,23 @@
+{
+    "name": "simple_chat",
+    "version": "0.1.0",
+    "description": "Simple Web Chatroom",
+    "main": "server.js",
+    "dependencies": {
+        "socket.io": "0.9.14",
+        "express": "~3.4.6"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:marcoslin/simple_chat.git"
+    },
+    "author": "Marcos Lin",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/marcoslin/simple_chat/issues"
+    }
+}

@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /*jslint node: true */
 
 /**
@@ -9,7 +7,7 @@
 var fs = require("fs");
 var express = require("express");
 var socket_io = require("socket.io");
-var chat_clients = require("chat_clients");
+var chat_clients = require("./lib/chat_clients");
 var repl = require("repl");
 var net = require('net');
 
